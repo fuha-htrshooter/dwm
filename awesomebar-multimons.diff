@@ -1,0 +1,24 @@
+ awesomebarに対する追加パッチ
+ ・選択していないモニターではウィンドウを非選択スタイルにするよう変更
+ ・ウィンドウが無いモニターを選択中は、ウィンドウ名の領域が選択スタイルになるよう変更
+
+--- a/dwm.c	2020-02-16 03:33:19.265061258 +0900
++++ b/dwm.c	2020-02-16 06:59:37.078920155 +0900
+@@ -758,7 +758,7 @@ drawbar(Monitor *m)
+ 			for (c = m->clients; c; c = c->next) {
+ 				if (!ISVISIBLE(c))
+ 					continue;
+-				if (m->sel == c)
++				if (m == selmon && m->sel == c)
+ 					scm = SchemeSel;
+ 				else if (HIDDEN(c))
+ 					scm = SchemeHid;
+@@ -776,7 +776,7 @@ drawbar(Monitor *m)
+ 				x += tabw;
+ 			}
+ 		} else {
+-			drw_setscheme(drw, scheme[SchemeNorm]);
++			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
+ 			drw_rect(drw, x, 0, w, bh, 1, 1);
+ 		}
+ 	}
