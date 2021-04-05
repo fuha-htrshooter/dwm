@@ -1,7 +1,7 @@
-$B%9%F!<%?%9%P!<$N6h@Z$jJ8;z$rG'<1$7!"NN0hKh$KJL%3%^%s%I$r<B9T$G$-$k$h$&$K$9$k!#(B
-$B2!$7$?$$>l=j$,(Bextrabar$BNN0h$@$C$?$N$G!"(Bextrabar$B%Q%C%A$K0MB8!#(B
-$B40A4$K<+J,4D6-MQ$NHs>o$K(Bdirty$B$J(Bpatch$B$J$N$G!"(B
-$B6=L#$r;}$C$?$H$$$&4qFC$J?M$O<jF0E,MQ$G$I$&$>!#(B
+ステータスバーの区切り文字を認識し、領域毎に別コマンドを実行できるようにする。
+押したい場所がextrabar領域だったので、extrabarパッチに依存。
+基本的に自分環境用に合わせてあるdirtyなpatchなので、
+興味を持ったという奇特な人は手動適用でどうぞ。
 
 --- a/config.def.h	2021-02-20 04:27:03.429318971 +0900
 +++ b/config.def.h	2021-02-20 04:25:43.756040133 +0900
